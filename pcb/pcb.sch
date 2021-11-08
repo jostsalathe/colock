@@ -3029,130 +3029,256 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_02x04_Odd_Even J13
 U 1 1 618DACC6
-P 8300 2950
-F 0 "J13" H 8350 2525 50  0000 C CNN
-F 1 "Conn_02x04_Odd_Even" H 8350 2616 50  0000 C CNN
-F 2 "" H 8300 2950 50  0001 C CNN
-F 3 "~" H 8300 2950 50  0001 C CNN
-	1    8300 2950
+P 8700 2950
+F 0 "J13" H 8750 2525 50  0000 C CNN
+F 1 "Conn_02x04_Odd_Even" H 8750 2616 50  0000 C CNN
+F 2 "" H 8700 2950 50  0001 C CNN
+F 3 "~" H 8700 2950 50  0001 C CNN
+	1    8700 2950
 	1    0    0    1   
 $EndComp
-Text Label 7950 3050 0    50   ~ 0
+Text Label 8350 3050 0    50   ~ 0
 G6
-Text Label 7450 3700 0    50   ~ 0
+Text Label 8100 3600 0    50   ~ 0
 V6
 Wire Wire Line
-	7950 3050 8100 3050
+	8350 3050 8500 3050
 $Comp
 L Device:C_Small C61
 U 1 1 619879E4
-P 7450 3900
-F 0 "C61" H 7450 4000 50  0000 C TNN
-F 1 "10u" H 7450 3800 50  0000 C BNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7450 3900 50  0001 C CNN
-F 3 "~" H 7450 3900 50  0001 C CNN
-	1    7450 3900
+P 8100 3800
+F 0 "C61" H 8100 3900 50  0000 C TNN
+F 1 "10u" H 8100 3700 50  0000 C BNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8100 3800 50  0001 C CNN
+F 3 "~" H 8100 3800 50  0001 C CNN
+	1    8100 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7450 3700 7550 3700
+	8100 3600 8200 3600
 Wire Wire Line
-	7450 3800 7450 3700
+	8100 3700 8100 3600
 $Comp
 L Device:C_Small C63
 U 1 1 61CCEDED
-P 8450 3900
-F 0 "C63" H 8450 4000 50  0000 C TNN
-F 1 "100n" H 8450 3800 50  0000 C BNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8450 3900 50  0001 C CNN
-F 3 "~" H 8450 3900 50  0001 C CNN
-	1    8450 3900
+P 9100 3800
+F 0 "C63" H 9100 3900 50  0000 C TNN
+F 1 "100n" H 9100 3700 50  0000 C BNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9100 3800 50  0001 C CNN
+F 3 "~" H 9100 3800 50  0001 C CNN
+	1    9100 3800
 	1    0    0    -1  
 $EndComp
 $Comp
 L Regulator_Linear:AMS1117-3.3 U1
 U 1 1 61CD8653
-P 7850 3700
-F 0 "U1" H 7850 3942 50  0000 C CNN
-F 1 "AMS1117-3.3" H 7850 3851 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 7850 3900 50  0001 C CNN
-F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 7950 3450 50  0001 C CNN
-	1    7850 3700
+P 8500 3600
+F 0 "U1" H 8500 3842 50  0000 C CNN
+F 1 "AMS1117-3.3" H 8500 3751 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 8500 3800 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 8600 3350 50  0001 C CNN
+	1    8500 3600
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C62
 U 1 1 61CDA55F
-P 8250 3900
-F 0 "C62" H 8250 4000 50  0000 C TNN
-F 1 "10u" H 8250 3800 50  0000 C BNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8250 3900 50  0001 C CNN
-F 3 "~" H 8250 3900 50  0001 C CNN
-	1    8250 3900
+P 8900 3800
+F 0 "C62" H 8900 3900 50  0000 C TNN
+F 1 "10u" H 8900 3700 50  0000 C BNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8900 3800 50  0001 C CNN
+F 3 "~" H 8900 3800 50  0001 C CNN
+	1    8900 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7450 4000 7450 4100
+	8100 3900 8100 4000
 Wire Wire Line
-	7450 4100 7850 4100
+	8100 4000 8500 4000
 Wire Wire Line
-	7850 4100 7850 4000
+	8500 4000 8500 3900
 Wire Wire Line
-	8150 3700 8250 3700
+	8800 3600 8900 3600
 Wire Wire Line
-	8250 3700 8250 3800
+	8900 3600 8900 3700
 Wire Wire Line
-	8250 4100 7850 4100
+	8900 4000 8500 4000
 Wire Wire Line
-	8250 4000 8250 4100
-Connection ~ 7850 4100
+	8900 3900 8900 4000
+Connection ~ 8500 4000
 Wire Wire Line
-	8250 3700 8450 3700
+	8900 3600 9100 3600
 Wire Wire Line
-	8450 3700 8450 3800
+	9100 3600 9100 3700
 Wire Wire Line
-	8450 4100 8250 4100
+	9100 4000 8900 4000
 Wire Wire Line
-	8450 4000 8450 4100
-Connection ~ 8250 3700
-Connection ~ 8250 4100
-Text Label 7850 4100 0    50   ~ 0
+	9100 3900 9100 4000
+Connection ~ 8900 3600
+Connection ~ 8900 4000
+Text Label 8500 4000 0    50   ~ 0
 G6
-Text Label 8450 3700 2    50   ~ 0
+Text Label 9100 3600 2    50   ~ 0
 3V3
-Text Label 8750 2750 2    50   ~ 0
+Text Label 9150 2750 2    50   ~ 0
 3V3
-Wire Wire Line
-	8750 2750 8600 2750
 $Comp
 L Connector_Generic:Conn_01x03 J?
 U 1 1 61E891BE
-P 9400 3000
-F 0 "J?" H 9318 2675 50  0000 C CNN
-F 1 "Conn_01x03" H 9318 2766 50  0000 C CNN
-F 2 "" H 9400 3000 50  0001 C CNN
-F 3 "~" H 9400 3000 50  0001 C CNN
-	1    9400 3000
+P 8250 2100
+F 0 "J?" H 8168 1775 50  0000 C CNN
+F 1 "Conn_01x03" H 8168 1866 50  0000 C CNN
+F 2 "" H 8250 2100 50  0001 C CNN
+F 3 "~" H 8250 2100 50  0001 C CNN
+	1    8250 2100
 	-1   0    0    1   
 $EndComp
-Text Label 9750 3000 2    50   ~ 0
+Text Label 8600 2100 2    50   ~ 0
 RX
-Text Label 9750 3100 2    50   ~ 0
+Text Label 8600 2200 2    50   ~ 0
 G6
-Text Label 9750 2900 2    50   ~ 0
+Text Label 8600 2000 2    50   ~ 0
 TX
 Wire Wire Line
-	9750 2900 9600 2900
+	8600 2000 8450 2000
 Wire Wire Line
-	9600 3000 9750 3000
+	8450 2100 8600 2100
 Wire Wire Line
-	9750 3100 9600 3100
-Text Label 7950 2750 0    50   ~ 0
+	8600 2200 8450 2200
+Text Label 8350 2750 0    50   ~ 0
 RX
 Wire Wire Line
-	8100 2750 7950 2750
-Text Label 8750 3050 2    50   ~ 0
+	8500 2750 8350 2750
+Text Label 9150 3050 2    50   ~ 0
 TX
 Wire Wire Line
-	8750 3050 8600 3050
+	9150 3050 9000 3050
+Text Label 8350 2850 0    50   ~ 0
+IO0
+Text Label 9150 2850 2    50   ~ 0
+RST
+Wire Wire Line
+	9000 2950 9200 2950
+Text Label 8350 2950 0    50   ~ 0
+IO2
+Text Label 9150 2950 2    50   ~ 0
+EN
+$Comp
+L Device:R_Small R?
+U 1 1 61BA4251
+P 9300 2950
+F 0 "R?" H 9359 2996 50  0000 L CNN
+F 1 "10k" H 9359 2905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9359 2859 50  0001 L CNN
+F 3 "~" H 9300 2950 50  0001 C CNN
+	1    9300 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 61BA5166
+P 9300 2850
+F 0 "R?" H 9359 2896 50  0000 L CNN
+F 1 "10k" H 9359 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9359 2759 50  0001 L CNN
+F 3 "~" H 9300 2850 50  0001 C CNN
+	1    9300 2850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9000 2850 9200 2850
+Wire Wire Line
+	9500 2850 9400 2850
+Wire Wire Line
+	9500 2850 9500 2900
+Wire Wire Line
+	9500 2950 9400 2950
+$Comp
+L Device:R_Small R?
+U 1 1 61DB85B2
+P 8200 2850
+F 0 "R?" H 8259 2896 50  0000 L CNN
+F 1 "10k" H 8259 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8259 2759 50  0001 L CNN
+F 3 "~" H 8200 2850 50  0001 C CNN
+	1    8200 2850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 61DB8A01
+P 8200 2950
+F 0 "R?" H 8259 2996 50  0000 L CNN
+F 1 "10k" H 8259 2905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8259 2859 50  0001 L CNN
+F 3 "~" H 8200 2950 50  0001 C CNN
+	1    8200 2950
+	0    1    1    0   
+$EndComp
+Text Label 9700 2900 2    50   ~ 0
+3V3
+Wire Wire Line
+	9700 2900 9500 2900
+Connection ~ 9500 2900
+Wire Wire Line
+	9500 2900 9500 2950
+Wire Wire Line
+	9150 2750 9000 2750
+Text Label 7800 2900 0    50   ~ 0
+3V3
+Wire Wire Line
+	8000 2850 8000 2900
+Wire Wire Line
+	8000 2850 8100 2850
+Wire Wire Line
+	8000 2950 8100 2950
+Wire Wire Line
+	8300 2850 8500 2850
+Wire Wire Line
+	8300 2950 8500 2950
+Wire Wire Line
+	7800 2900 8000 2900
+Connection ~ 8000 2900
+Wire Wire Line
+	8000 2900 8000 2950
+$Comp
+L Transistor_FET:AO3400A Q?
+U 1 1 620DDC36
+P 6950 3100
+F 0 "Q?" V 7199 3100 50  0000 C CNN
+F 1 "AO3400A" V 7290 3100 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7150 3025 50  0001 L CIN
+F 3 "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf" H 6950 3100 50  0001 L CNN
+	1    6950 3100
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6650 3200 6450 3200
+Connection ~ 6450 3200
+Text Label 6650 2800 3    50   ~ 0
+V6
+$Comp
+L Device:R_Small R?
+U 1 1 6214126B
+P 6650 3050
+F 0 "R?" H 6709 3096 50  0000 L CNN
+F 1 "2k2" H 6709 3005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6709 2959 50  0001 L CNN
+F 3 "~" H 6650 3050 50  0001 C CNN
+	1    6650 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 2800 6650 2950
+Text Label 6950 2700 3    50   ~ 0
+3V3
+Wire Wire Line
+	6950 2900 6950 2700
+Wire Wire Line
+	6650 3200 6750 3200
+Connection ~ 6650 3200
+Wire Wire Line
+	6650 3150 6650 3200
+Wire Wire Line
+	7150 3200 7400 3200
 $EndSCHEMATC
