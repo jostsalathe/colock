@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP USB_C_Receptacle_Power
+D USB Type-C power only Receptacle connector
+K usb universal serial bus type-C power 6 pin
+F https://www.usb.org/sites/default/files/documents/usb_type-c.zip
+$ENDCMP
+#
 $CMP WS2812B-4020
 D RGB LED with integrated controller, side emitting
 K RGB LED NeoPixel addressable side emitting

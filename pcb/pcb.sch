@@ -14,28 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L power:PWR_FLAG #FLG01
-U 1 1 61837228
-P 850 1000
-F 0 "#FLG01" H 850 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 850 1128 50  0000 L CNN
-F 2 "" H 850 1000 50  0001 C CNN
-F 3 "~" H 850 1000 50  0001 C CNN
-	1    850  1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG02
-U 1 1 61837D0E
-P 1450 1000
-F 0 "#FLG02" H 1450 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 1450 1128 50  0000 L CNN
-F 2 "" H 1450 1000 50  0001 C CNN
-F 3 "~" H 1450 1000 50  0001 C CNN
-	1    1450 1000
-	1    0    0    -1  
-$EndComp
-$Comp
 L myLibrary:WS2812B-4020 D1
 U 1 1 6182D0A8
 P 950 1350
@@ -79,9 +57,9 @@ F 3 "~" H 1300 1400 50  0001 C CNN
 	1    1300 1400
 	1    0    0    -1  
 $EndComp
-Text Label 850  1050 0    50   ~ 0
+Text Label 1000 1050 2    50   ~ 0
 V1
-Text Label 1450 1050 2    50   ~ 0
+Text Label 1300 1050 0    50   ~ 0
 G1
 $Comp
 L myLibrary:WS2812B-4020 D2
@@ -476,13 +454,9 @@ Wire Wire Line
 Wire Wire Line
 	1100 4800 1100 4300
 Wire Wire Line
-	1300 1000 1300 1050
-Wire Wire Line
 	1300 1100 1200 1100
 Wire Wire Line
 	1200 1100 1200 1500
-Wire Wire Line
-	1000 1000 1000 1050
 Wire Wire Line
 	1000 1100 1100 1100
 Wire Wire Line
@@ -492,20 +466,6 @@ Wire Wire Line
 Wire Wire Line
 	1150 1200 1050 1200
 Wire Wire Line
-	850  1000 850  1050
-Wire Wire Line
-	850  1050 1000 1050
-Connection ~ 1000 1050
-Wire Wire Line
-	1000 1050 1000 1100
-Wire Wire Line
-	1450 1000 1450 1050
-Wire Wire Line
-	1450 1050 1300 1050
-Connection ~ 1300 1050
-Wire Wire Line
-	1300 1050 1300 1100
-Wire Wire Line
 	1300 6100 1200 6100
 Wire Wire Line
 	1200 6100 1200 6000
@@ -513,28 +473,6 @@ Wire Wire Line
 	1000 6100 1100 6100
 Wire Wire Line
 	1100 6100 1100 5800
-$Comp
-L power:PWR_FLAG #FLG03
-U 1 1 618C019B
-P 1850 1000
-F 0 "#FLG03" H 1850 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 1850 1128 50  0000 L CNN
-F 2 "" H 1850 1000 50  0001 C CNN
-F 3 "~" H 1850 1000 50  0001 C CNN
-	1    1850 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG04
-U 1 1 618C01A1
-P 2450 1000
-F 0 "#FLG04" H 2450 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 2450 1128 50  0000 L CNN
-F 2 "" H 2450 1000 50  0001 C CNN
-F 3 "~" H 2450 1000 50  0001 C CNN
-	1    2450 1000
-	1    0    0    -1  
-$EndComp
 $Comp
 L myLibrary:WS2812B-4020 D11
 U 1 1 618C01A7
@@ -579,10 +517,8 @@ F 3 "~" H 2300 1400 50  0001 C CNN
 	1    2300 1400
 	1    0    0    -1  
 $EndComp
-Text Label 1850 1050 0    50   ~ 0
+Text Label 2000 1050 2    50   ~ 0
 V2
-Text Label 2450 1050 2    50   ~ 0
-G2
 $Comp
 L myLibrary:WS2812B-4020 D12
 U 1 1 618C01C1
@@ -976,13 +912,9 @@ Wire Wire Line
 Wire Wire Line
 	2100 4800 2100 4300
 Wire Wire Line
-	2300 1000 2300 1050
-Wire Wire Line
 	2300 1100 2200 1100
 Wire Wire Line
 	2200 1100 2200 1500
-Wire Wire Line
-	2000 1000 2000 1050
 Wire Wire Line
 	2000 1100 2100 1100
 Wire Wire Line
@@ -992,20 +924,6 @@ Wire Wire Line
 Wire Wire Line
 	2150 1200 2050 1200
 Wire Wire Line
-	1850 1000 1850 1050
-Wire Wire Line
-	1850 1050 2000 1050
-Connection ~ 2000 1050
-Wire Wire Line
-	2000 1050 2000 1100
-Wire Wire Line
-	2450 1000 2450 1050
-Wire Wire Line
-	2450 1050 2300 1050
-Connection ~ 2300 1050
-Wire Wire Line
-	2300 1050 2300 1100
-Wire Wire Line
 	2300 6100 2200 6100
 Wire Wire Line
 	2200 6100 2200 6000
@@ -1013,28 +931,6 @@ Wire Wire Line
 	2000 6100 2100 6100
 Wire Wire Line
 	2100 6100 2100 5800
-$Comp
-L power:PWR_FLAG #FLG05
-U 1 1 6190EAC4
-P 2850 1000
-F 0 "#FLG05" H 2850 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 2850 1128 50  0000 L CNN
-F 2 "" H 2850 1000 50  0001 C CNN
-F 3 "~" H 2850 1000 50  0001 C CNN
-	1    2850 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG06
-U 1 1 6190EACA
-P 3450 1000
-F 0 "#FLG06" H 3450 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 3450 1128 50  0000 L CNN
-F 2 "" H 3450 1000 50  0001 C CNN
-F 3 "~" H 3450 1000 50  0001 C CNN
-	1    3450 1000
-	1    0    0    -1  
-$EndComp
 $Comp
 L myLibrary:WS2812B-4020 D21
 U 1 1 6190EAD0
@@ -1079,9 +975,9 @@ F 3 "~" H 3300 1400 50  0001 C CNN
 	1    3300 1400
 	1    0    0    -1  
 $EndComp
-Text Label 2850 1050 0    50   ~ 0
+Text Label 3000 1050 2    50   ~ 0
 V3
-Text Label 3450 1050 2    50   ~ 0
+Text Label 3300 1050 0    50   ~ 0
 G3
 $Comp
 L myLibrary:WS2812B-4020 D22
@@ -1476,13 +1372,9 @@ Wire Wire Line
 Wire Wire Line
 	3100 4800 3100 4300
 Wire Wire Line
-	3300 1000 3300 1050
-Wire Wire Line
 	3300 1100 3200 1100
 Wire Wire Line
 	3200 1100 3200 1500
-Wire Wire Line
-	3000 1000 3000 1050
 Wire Wire Line
 	3000 1100 3100 1100
 Wire Wire Line
@@ -1492,20 +1384,6 @@ Wire Wire Line
 Wire Wire Line
 	3150 1200 3050 1200
 Wire Wire Line
-	2850 1000 2850 1050
-Wire Wire Line
-	2850 1050 3000 1050
-Connection ~ 3000 1050
-Wire Wire Line
-	3000 1050 3000 1100
-Wire Wire Line
-	3450 1000 3450 1050
-Wire Wire Line
-	3450 1050 3300 1050
-Connection ~ 3300 1050
-Wire Wire Line
-	3300 1050 3300 1100
-Wire Wire Line
 	3300 6100 3200 6100
 Wire Wire Line
 	3200 6100 3200 6000
@@ -1513,28 +1391,6 @@ Wire Wire Line
 	3000 6100 3100 6100
 Wire Wire Line
 	3100 6100 3100 5800
-$Comp
-L power:PWR_FLAG #FLG07
-U 1 1 61930890
-P 3850 1000
-F 0 "#FLG07" H 3850 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 3850 1128 50  0000 L CNN
-F 2 "" H 3850 1000 50  0001 C CNN
-F 3 "~" H 3850 1000 50  0001 C CNN
-	1    3850 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG08
-U 1 1 61930896
-P 4450 1000
-F 0 "#FLG08" H 4450 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 4450 1128 50  0000 L CNN
-F 2 "" H 4450 1000 50  0001 C CNN
-F 3 "~" H 4450 1000 50  0001 C CNN
-	1    4450 1000
-	1    0    0    -1  
-$EndComp
 $Comp
 L myLibrary:WS2812B-4020 D31
 U 1 1 6193089C
@@ -1579,9 +1435,9 @@ F 3 "~" H 4300 1400 50  0001 C CNN
 	1    4300 1400
 	1    0    0    -1  
 $EndComp
-Text Label 3850 1050 0    50   ~ 0
+Text Label 4000 1050 2    50   ~ 0
 V4
-Text Label 4450 1050 2    50   ~ 0
+Text Label 4300 1050 0    50   ~ 0
 G4
 $Comp
 L myLibrary:WS2812B-4020 D32
@@ -1976,13 +1832,9 @@ Wire Wire Line
 Wire Wire Line
 	4100 4800 4100 4300
 Wire Wire Line
-	4300 1000 4300 1050
-Wire Wire Line
 	4300 1100 4200 1100
 Wire Wire Line
 	4200 1100 4200 1500
-Wire Wire Line
-	4000 1000 4000 1050
 Wire Wire Line
 	4000 1100 4100 1100
 Wire Wire Line
@@ -1992,20 +1844,6 @@ Wire Wire Line
 Wire Wire Line
 	4150 1200 4050 1200
 Wire Wire Line
-	3850 1000 3850 1050
-Wire Wire Line
-	3850 1050 4000 1050
-Connection ~ 4000 1050
-Wire Wire Line
-	4000 1050 4000 1100
-Wire Wire Line
-	4450 1000 4450 1050
-Wire Wire Line
-	4450 1050 4300 1050
-Connection ~ 4300 1050
-Wire Wire Line
-	4300 1050 4300 1100
-Wire Wire Line
 	4300 6100 4200 6100
 Wire Wire Line
 	4200 6100 4200 6000
@@ -2013,28 +1851,6 @@ Wire Wire Line
 	4000 6100 4100 6100
 Wire Wire Line
 	4100 6100 4100 5800
-$Comp
-L power:PWR_FLAG #FLG09
-U 1 1 619655A0
-P 4850 1000
-F 0 "#FLG09" H 4850 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 4850 1128 50  0000 L CNN
-F 2 "" H 4850 1000 50  0001 C CNN
-F 3 "~" H 4850 1000 50  0001 C CNN
-	1    4850 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG010
-U 1 1 619655A6
-P 5450 1000
-F 0 "#FLG010" H 5450 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 5450 1128 50  0000 L CNN
-F 2 "" H 5450 1000 50  0001 C CNN
-F 3 "~" H 5450 1000 50  0001 C CNN
-	1    5450 1000
-	1    0    0    -1  
-$EndComp
 $Comp
 L myLibrary:WS2812B-4020 D41
 U 1 1 619655AC
@@ -2079,9 +1895,9 @@ F 3 "~" H 5300 1400 50  0001 C CNN
 	1    5300 1400
 	1    0    0    -1  
 $EndComp
-Text Label 4850 1050 0    50   ~ 0
+Text Label 5000 1050 2    50   ~ 0
 V5
-Text Label 5450 1050 2    50   ~ 0
+Text Label 5300 1050 0    50   ~ 0
 G5
 $Comp
 L myLibrary:WS2812B-4020 D42
@@ -2476,13 +2292,9 @@ Wire Wire Line
 Wire Wire Line
 	5100 4800 5100 4300
 Wire Wire Line
-	5300 1000 5300 1050
-Wire Wire Line
 	5300 1100 5200 1100
 Wire Wire Line
 	5200 1100 5200 1500
-Wire Wire Line
-	5000 1000 5000 1050
 Wire Wire Line
 	5000 1100 5100 1100
 Wire Wire Line
@@ -2492,20 +2304,6 @@ Wire Wire Line
 Wire Wire Line
 	5150 1200 5050 1200
 Wire Wire Line
-	4850 1000 4850 1050
-Wire Wire Line
-	4850 1050 5000 1050
-Connection ~ 5000 1050
-Wire Wire Line
-	5000 1050 5000 1100
-Wire Wire Line
-	5450 1000 5450 1050
-Wire Wire Line
-	5450 1050 5300 1050
-Connection ~ 5300 1050
-Wire Wire Line
-	5300 1050 5300 1100
-Wire Wire Line
 	5300 6100 5200 6100
 Wire Wire Line
 	5200 6100 5200 6000
@@ -2513,28 +2311,6 @@ Wire Wire Line
 	5000 6100 5100 6100
 Wire Wire Line
 	5100 6100 5100 5800
-$Comp
-L power:PWR_FLAG #FLG011
-U 1 1 619B69F6
-P 5850 1000
-F 0 "#FLG011" H 5850 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 5850 1128 50  0000 L CNN
-F 2 "" H 5850 1000 50  0001 C CNN
-F 3 "~" H 5850 1000 50  0001 C CNN
-	1    5850 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG012
-U 1 1 619B69FC
-P 6450 1000
-F 0 "#FLG012" H 6450 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 6450 1128 50  0000 L CNN
-F 2 "" H 6450 1000 50  0001 C CNN
-F 3 "~" H 6450 1000 50  0001 C CNN
-	1    6450 1000
-	1    0    0    -1  
-$EndComp
 $Comp
 L myLibrary:WS2812B-4020 D51
 U 1 1 619B6A02
@@ -2579,9 +2355,9 @@ F 3 "~" H 6300 1400 50  0001 C CNN
 	1    6300 1400
 	1    0    0    -1  
 $EndComp
-Text Label 5850 1050 0    50   ~ 0
+Text Label 6000 1050 2    50   ~ 0
 V6
-Text Label 6450 1050 2    50   ~ 0
+Text Label 6300 1050 0    50   ~ 0
 G6
 $Comp
 L myLibrary:WS2812B-4020 D52
@@ -2974,13 +2750,9 @@ Wire Wire Line
 Wire Wire Line
 	6100 4800 6100 4300
 Wire Wire Line
-	6300 1000 6300 1050
-Wire Wire Line
 	6300 1100 6200 1100
 Wire Wire Line
 	6200 1100 6200 1500
-Wire Wire Line
-	6000 1000 6000 1050
 Wire Wire Line
 	6000 1100 6100 1100
 Wire Wire Line
@@ -2989,20 +2761,6 @@ Wire Wire Line
 	6150 1100 6150 1200
 Wire Wire Line
 	6150 1200 6050 1200
-Wire Wire Line
-	5850 1000 5850 1050
-Wire Wire Line
-	5850 1050 6000 1050
-Connection ~ 6000 1050
-Wire Wire Line
-	6000 1050 6000 1100
-Wire Wire Line
-	6450 1000 6450 1050
-Wire Wire Line
-	6450 1050 6300 1050
-Connection ~ 6300 1050
-Wire Wire Line
-	6300 1050 6300 1100
 Wire Wire Line
 	6300 6100 6200 6100
 Wire Wire Line
@@ -3032,7 +2790,7 @@ U 1 1 618DACC6
 P 8700 2950
 F 0 "J13" H 8750 2525 50  0000 C CNN
 F 1 "Conn_02x04_Odd_Even" H 8750 2616 50  0000 C CNN
-F 2 "" H 8700 2950 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical" H 8700 2950 50  0001 C CNN
 F 3 "~" H 8700 2950 50  0001 C CNN
 	1    8700 2950
 	1    0    0    1   
@@ -3123,12 +2881,12 @@ Text Label 9100 3600 2    50   ~ 0
 Text Label 9150 2750 2    50   ~ 0
 3V3
 $Comp
-L Connector_Generic:Conn_01x03 J?
+L Connector_Generic:Conn_01x03 J14
 U 1 1 61E891BE
 P 8250 2100
-F 0 "J?" H 8168 1775 50  0000 C CNN
+F 0 "J14" H 8168 1775 50  0000 C CNN
 F 1 "Conn_01x03" H 8168 1866 50  0000 C CNN
-F 2 "" H 8250 2100 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8250 2100 50  0001 C CNN
 F 3 "~" H 8250 2100 50  0001 C CNN
 	1    8250 2100
 	-1   0    0    1   
@@ -3164,10 +2922,10 @@ IO2
 Text Label 9150 2950 2    50   ~ 0
 EN
 $Comp
-L Device:R_Small R?
+L Device:R_Small R6
 U 1 1 61BA4251
 P 9300 2950
-F 0 "R?" H 9359 2996 50  0000 L CNN
+F 0 "R6" H 9359 2996 50  0000 L CNN
 F 1 "10k" H 9359 2905 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9359 2859 50  0001 L CNN
 F 3 "~" H 9300 2950 50  0001 C CNN
@@ -3175,10 +2933,10 @@ F 3 "~" H 9300 2950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small R?
+L Device:R_Small R5
 U 1 1 61BA5166
 P 9300 2850
-F 0 "R?" H 9359 2896 50  0000 L CNN
+F 0 "R5" H 9359 2896 50  0000 L CNN
 F 1 "10k" H 9359 2805 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9359 2759 50  0001 L CNN
 F 3 "~" H 9300 2850 50  0001 C CNN
@@ -3194,10 +2952,10 @@ Wire Wire Line
 Wire Wire Line
 	9500 2950 9400 2950
 $Comp
-L Device:R_Small R?
+L Device:R_Small R3
 U 1 1 61DB85B2
 P 8200 2850
-F 0 "R?" H 8259 2896 50  0000 L CNN
+F 0 "R3" H 8259 2896 50  0000 L CNN
 F 1 "10k" H 8259 2805 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8259 2759 50  0001 L CNN
 F 3 "~" H 8200 2850 50  0001 C CNN
@@ -3205,10 +2963,10 @@ F 3 "~" H 8200 2850 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R_Small R?
+L Device:R_Small R4
 U 1 1 61DB8A01
 P 8200 2950
-F 0 "R?" H 8259 2996 50  0000 L CNN
+F 0 "R4" H 8259 2996 50  0000 L CNN
 F 1 "10k" H 8259 2905 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8259 2859 50  0001 L CNN
 F 3 "~" H 8200 2950 50  0001 C CNN
@@ -3242,10 +3000,10 @@ Connection ~ 8000 2900
 Wire Wire Line
 	8000 2900 8000 2950
 $Comp
-L Transistor_FET:AO3400A Q?
+L Transistor_FET:AO3400A Q1
 U 1 1 620DDC36
 P 6950 3100
-F 0 "Q?" V 7199 3100 50  0000 C CNN
+F 0 "Q1" V 7199 3100 50  0000 C CNN
 F 1 "AO3400A" V 7290 3100 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 7150 3025 50  0001 L CIN
 F 3 "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf" H 6950 3100 50  0001 L CNN
@@ -3255,13 +3013,13 @@ $EndComp
 Wire Wire Line
 	6650 3200 6450 3200
 Connection ~ 6450 3200
-Text Label 6650 2800 3    50   ~ 0
+Text Label 6650 2850 3    50   ~ 0
 V6
 $Comp
-L Device:R_Small R?
+L Device:R_Small R2
 U 1 1 6214126B
 P 6650 3050
-F 0 "R?" H 6709 3096 50  0000 L CNN
+F 0 "R2" H 6709 3096 50  0000 L CNN
 F 1 "2k2" H 6709 3005 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6709 2959 50  0001 L CNN
 F 3 "~" H 6650 3050 50  0001 C CNN
@@ -3269,16 +3027,113 @@ F 3 "~" H 6650 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6650 2800 6650 2950
-Text Label 6950 2700 3    50   ~ 0
+	6650 2850 6650 2950
+Text Label 6950 2750 3    50   ~ 0
 3V3
 Wire Wire Line
-	6950 2900 6950 2700
+	6950 2900 6950 2750
 Wire Wire Line
 	6650 3200 6750 3200
 Connection ~ 6650 3200
 Wire Wire Line
 	6650 3150 6650 3200
 Wire Wire Line
-	7150 3200 7400 3200
+	7150 3200 7300 3200
+Text Label 7300 3200 2    50   ~ 0
+IO2
+$Comp
+L Device:R_Small R7
+U 1 1 61A1360C
+P 9400 4800
+F 0 "R7" H 9459 4846 50  0000 L CNN
+F 1 "5k1" H 9459 4755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9459 4709 50  0001 L CNN
+F 3 "~" H 9400 4800 50  0001 C CNN
+	1    9400 4800
+	0    -1   -1   0   
+$EndComp
+Text Label 9150 4800 0    50   ~ 0
+CC1
+Text Label 9150 4900 0    50   ~ 0
+CC2
+Text Label 9700 4850 2    50   ~ 0
+G6
+$Comp
+L Device:R_Small R8
+U 1 1 61A150E2
+P 9400 4900
+F 0 "R8" H 9459 4946 50  0000 L CNN
+F 1 "5k1" H 9459 4855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9459 4809 50  0001 L CNN
+F 3 "~" H 9400 4900 50  0001 C CNN
+	1    9400 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9100 4800 9300 4800
+Wire Wire Line
+	9600 4800 9600 4850
+Wire Wire Line
+	9600 4900 9500 4900
+Wire Wire Line
+	9500 4800 9600 4800
+Wire Wire Line
+	9300 4900 9100 4900
+Wire Wire Line
+	9600 4850 9700 4850
+Connection ~ 9600 4850
+Wire Wire Line
+	9600 4850 9600 4900
+$Comp
+L myLibrary:USB_C_Receptacle_Power J15
+U 1 1 61BA23E1
+P 8500 4900
+F 0 "J15" H 8607 5367 50  0000 C CNN
+F 1 "USB_C_Receptacle_Power" H 8607 5276 50  0000 C CNN
+F 2 "myLibrary:USB_C_Receptacle_HRO_TYPE-C-31-M-17" H 8650 4900 50  0001 C CNN
+F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 8650 4900 50  0001 C CNN
+	1    8500 4900
+	1    0    0    -1  
+$EndComp
+Text Label 9300 4700 2    50   ~ 0
+V6
+Wire Wire Line
+	9300 4700 9100 4700
+Text Label 9300 5000 2    50   ~ 0
+G6
+Wire Wire Line
+	9300 5000 9200 5000
+Wire Wire Line
+	9100 5100 9200 5100
+Wire Wire Line
+	9200 5100 9200 5000
+Connection ~ 9200 5000
+Wire Wire Line
+	9200 5000 9100 5000
+Wire Wire Line
+	1000 1000 1000 1100
+Wire Wire Line
+	1300 1000 1300 1100
+Text Label 2300 1050 0    50   ~ 0
+G2
+Wire Wire Line
+	2300 1000 2300 1100
+Wire Wire Line
+	2000 1000 2000 1100
+Wire Wire Line
+	3000 1000 3000 1100
+Wire Wire Line
+	3300 1000 3300 1100
+Wire Wire Line
+	4000 1000 4000 1100
+Wire Wire Line
+	4300 1000 4300 1100
+Wire Wire Line
+	5000 1000 5000 1100
+Wire Wire Line
+	5300 1000 5300 1100
+Wire Wire Line
+	6000 1000 6000 1100
+Wire Wire Line
+	6300 1000 6300 1100
 $EndSCHEMATC
