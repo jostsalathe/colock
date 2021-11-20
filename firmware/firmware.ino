@@ -1,6 +1,5 @@
-//#include <FastLED.h>
-
-#include <FS.h>
+#include <FastLED.h>
+#include <LittleFS.h>
 #include <ESP8266WiFi.h>
 #include <Updater.h>
 #include <ArduinoJson.h>
@@ -45,6 +44,15 @@ Timezone myTZ;
 
 
 //---------------------------------------------------------------------
+// LED variables
+
+#define NUM_LEDS 12
+// #define NUM_LEDS 120
+#define LED_PIN 2
+CRGB leds[NUM_LEDS];
+
+
+//---------------------------------------------------------------------
 // general variables
 
 enum action_t
@@ -59,8 +67,8 @@ enum action_t
 
 enum colorIndex_t
 {
-  BRIGHT_RED = 0,
-  BRIGHT_GREEN = 1,
+  BRIGHT_GREEN = 0,
+  BRIGHT_RED = 1,
   BRIGHT_BLUE = 2
 };
 
@@ -146,15 +154,14 @@ void loop()
 
 void initDisplay()
 {
-  Serial1.begin(150000);
-  showEmpty();
+  FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, NUM_LEDS);
 }
 
 
 
 void initConfig()
 {
-  if (SPIFFS.begin())
+  if (LittleFS.begin())
   {
     Serial.println("mounted file system");
     loadConfig();
@@ -167,10 +174,10 @@ void initConfig()
 
 void loadConfig()
 {
-  if (SPIFFS.exists("/config.json"))
+  if (LittleFS.exists("/config.json"))
   {
     Serial.println("reading config file");
-    File configFile = SPIFFS.open("/config.json", "r");
+    File configFile = LittleFS.open("/config.json", "r");
     if (configFile)
     {
       Serial.println("opened config file");
@@ -215,7 +222,7 @@ void loadConfig()
 void saveConfig()
 {
   Serial.println("writing config file");
-  File configFile = SPIFFS.open("/config.json", "w");
+  File configFile = LittleFS.open("/config.json", "w");
   if (configFile)
   {
     Serial.println("opened config file");
@@ -263,7 +270,7 @@ void initTime()
 void handleTime()
 {
   events();
-  if (minuteChanged())
+  if (secondChanged())
   {
     showTime();
   }
@@ -277,16 +284,12 @@ bool isDayTime()
 
 void showEmpty()
 {
-  //TODO: clear LEDs and schow
-  Serial.println("TODO: clear LEDs and show");
+  Serial.println("clear LEDs and show");
+  FastLED.clear(true);
 }
 
 void showTime()
 {
-  char ihMSD = (myTZ.hour()/10)%10;
-  char ihLSD = myTZ.hour()%10;
-  char imMSD = (myTZ.minute()/10)%10;
-  char imLSD = myTZ.minute()%10;
   uint8_t brightness[3];
   if (isDayTime())
   {
@@ -301,9 +304,31 @@ void showTime()
     brightness[2] = brightnessNight[2];
   }
 
-  //TODO: set LEDs and show
-  Serial.print("TODO: set LEDs and show: ");
-  Serial.println(myTZ.dateTime());
+  // set LEDs and show
+  uint8_t hour = myTZ.hour();
+  uint8_t minute = myTZ.minute();
+  uint8_t second = myTZ.second();
+  leds[(hour+11)%12].red = 0;
+  leds[hour%12].red = 25 * (hour/12+1);
+  leds[(minute/5+11)%12].green = 0;
+  leds[minute/5].green = 10 * (minute%5+1);
+  leds[(second/5+11)%12].blue = 0;
+  leds[second/5].blue = 10 * (second%5+1);
+  FastLED.show();
+
+  Serial.print("set LEDs and show: ");
+  Serial.print(hour);
+  Serial.print(":");
+  Serial.print(minute);
+  Serial.print(":");
+  Serial.print(second);
+  Serial.print(" ");
+  Serial.print(hour%12);
+  Serial.print(":");
+  Serial.print(minute/5);
+  Serial.print(":");
+  Serial.print(second/5);
+  Serial.println();
 }
 
 
@@ -594,7 +619,7 @@ void make_HTML01()
   strcat( HTML_String, "<form>");
   strcat( HTML_String, "<button style=\"width:400px;height:75px;font-size:100%\" name=\"ACTION\" value=\"");
   strcati(HTML_String, ACTION_WRITE_CONFIG);
-  strcat( HTML_String, "\">write config to SPIFFS</button>");
+  strcat( HTML_String, "\">write config to LittleFS</button>");
   strcat( HTML_String, "</form>");
   strcat( HTML_String, "</td>");
 
