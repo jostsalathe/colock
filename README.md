@@ -1,10 +1,6 @@
 # Colock
 A USB powered RGB wall clock inspired by analog clocks
 
-# Table of contents
-
-[[_TOC_]]
-
 ## Parts
 
 | Part | Count | Refs | JLCPCB # ***extended*** |
