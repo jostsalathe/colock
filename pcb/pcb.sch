@@ -4,12 +4,12 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
+Title "colock"
+Date "2021-11-24"
+Rev "A"
 Comp ""
-Comment1 ""
-Comment2 ""
+Comment1 "CC-BY-SA 3.0"
+Comment2 "(c) Jost Salathé"
 Comment3 ""
 Comment4 ""
 $EndDescr
