@@ -1,9 +1,9 @@
-#include <FastLED.h> // CAUTION! CURRENTLY ONLY WORKS IF ESP8266 ARDUINO CORE VERSION IS <= 2.6.3
 #include <LittleFS.h>
 #include <ESP8266WiFi.h>
 #include <Updater.h>
 #include <ArduinoJson.h>
 #include <ezTime.h>
+#include <NeoPixelBus.h>
 
 
 //---------------------------------------------------------------------
@@ -48,7 +48,7 @@ Timezone myTZ;
 
 #define NUM_LEDS 120
 #define LED_PIN 2
-CRGB leds[NUM_LEDS];
+NeoPixelBus<NeoGrbFeature, NeoEsp8266Uart1800KbpsMethod> leds(NUM_LEDS, LED_PIN);
 // The outer LEDs have even indices (0, 2, 4, ...) 
 // The inner LEDs have odd indices (1, 3, 5, ...) 
 // This firmware assumes that the first LED sits at the 6 o'clock position and the signal runs counterclockwise.
@@ -87,6 +87,7 @@ void initTime();
 void handleTime();
 bool isDayTime();
 
+RgbColor operator+(const RgbColor & lhs, const RgbColor & rhs);
 void showEmpty();
 void showTime();
 
@@ -157,8 +158,8 @@ void loop()
 void initDisplay()
 {
   Serial.println("LEDs init");
-  FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, NUM_LEDS);
-  FastLED.setCorrection(TypicalSMD5050);
+  leds.Begin();
+  leds.Show();
   /*
   delay(1000);
   leds.fill(leds.Color(10, 10, 10));
@@ -299,22 +300,29 @@ bool isDayTime()
   return dayStart <= minuteOfDay && minuteOfDay < dayEnd;
 }
 
+RgbColor operator+(const RgbColor & lhs, const RgbColor & rhs)
+{
+  return RgbColor(lhs.R + rhs.R, lhs.G + rhs.G, lhs.B + rhs.B);
+}
+
 void showEmpty()
 {
   Serial.println("clear LEDs and show");
-  FastLED.clear(true);
+  leds.ClearTo(0);
+  leds.Show();
 }
 
 void showTime()
 {
   // prepare colors
-  const uint8_t br = isDayTime() ? 0x20 : 0x8;
+  const uint8_t br = isDayTime() ? 0x1f : 0x4;
 
-  const CRGB hColor = CRGB(0, 0, br);
-  const CRGB mColor = CRGB(0, br, 0);
-  const CRGB sColor = CRGB(br, 0, 0);
-  const CRGB hMarkColor = CRGB(br, br, br) / 2;
-  const CRGB mMarkColor = CRGB(br, br, br) / 4;
+  const RgbColor bgColor(0, 0, 0);
+  const RgbColor hColor(0, 0, br);
+  const RgbColor mColor(0, br, 0);
+  const RgbColor sColor(br, 0, 0);
+  const RgbColor hMarkColor(br/2, br/2, br/2);
+  const RgbColor mMarkColor(br/4, br/4, br/4);
 
   // set LEDs and show
   uint8_t second = myTZ.second();
@@ -328,20 +336,22 @@ void showTime()
   for (int i=0; i < NUM_LEDS/2; ++i)
   {
     // odd index - inner ring
-    leds[i*2+1] = cursor%5 == 0 ? hMarkColor : mMarkColor;
-    if (cursor == hPos) leds[i*2+1] += hColor;
+    RgbColor color = cursor%5 == 0 ? hMarkColor : mMarkColor;
+    if (cursor == hPos) color = color + hColor;
+    leds.SetPixelColor(i*2+1, color);
 
     // even index - outer ring
-    leds[i*2] = 0;
-    if (cursor == mPos) leds[i*2] += mColor;
-    if (cursor == sPos) leds[i*2] += sColor;
+    color = bgColor;
+    if (cursor == mPos) color = color + mColor;
+    if (cursor == sPos) color = color + sColor;
+    leds.SetPixelColor(i*2, color);
     
     // move cursor
     if (cursor == 0) cursor += 60;
     --cursor;
   }
 
-  FastLED.show();
+  leds.Show();
 
   Serial.print("set LEDs and show: ");
   Serial.print(hour);
