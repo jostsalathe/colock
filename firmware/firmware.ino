@@ -1,4 +1,4 @@
-#include <FastLED.h>
+#include <FastLED.h> // CAUTION! CURRENTLY ONLY WORKS IF ESP8266 ARDUINO CORE VERSION IS <= 2.6.3
 #include <LittleFS.h>
 #include <ESP8266WiFi.h>
 #include <Updater.h>
@@ -46,10 +46,12 @@ Timezone myTZ;
 //---------------------------------------------------------------------
 // LED variables
 
-#define NUM_LEDS 12
-// #define NUM_LEDS 120
+#define NUM_LEDS 120
 #define LED_PIN 2
 CRGB leds[NUM_LEDS];
+// The outer LEDs have even indices (0, 2, 4, ...) 
+// The inner LEDs have odd indices (1, 3, 5, ...) 
+// This firmware assumes that the first LED sits at the 6 o'clock position and the signal runs counterclockwise.
 
 
 //---------------------------------------------------------------------
@@ -154,7 +156,22 @@ void loop()
 
 void initDisplay()
 {
+  Serial.println("LEDs init");
   FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, NUM_LEDS);
+  FastLED.setCorrection(TypicalSMD5050);
+  /*
+  delay(1000);
+  leds.fill(leds.Color(10, 10, 10));
+  for (int i=0; i < 60;)// ++i)
+  {
+    Serial.println("LEDs update 10,10,10");
+    leds.show();
+    delay(100);
+  }
+  Serial.println("LEDs show clear");
+  leds.clear();
+  leds.show();
+  */
 }
 
 
@@ -290,30 +307,40 @@ void showEmpty()
 
 void showTime()
 {
-  uint8_t brightness[3];
-  if (isDayTime())
-  {
-    brightness[0] = brightnessDay[0];
-    brightness[1] = brightnessDay[1];
-    brightness[2] = brightnessDay[2];
-  }
-  else
-  {
-    brightness[0] = brightnessNight[0];
-    brightness[1] = brightnessNight[1];
-    brightness[2] = brightnessNight[2];
-  }
+  // prepare colors
+  const uint8_t br = isDayTime() ? 0x20 : 0x8;
+
+  const CRGB hColor = CRGB(0, 0, br);
+  const CRGB mColor = CRGB(0, br, 0);
+  const CRGB sColor = CRGB(br, 0, 0);
+  const CRGB hMarkColor = CRGB(br, br, br) / 2;
+  const CRGB mMarkColor = CRGB(br, br, br) / 4;
 
   // set LEDs and show
-  uint8_t hour = myTZ.hour();
-  uint8_t minute = myTZ.minute();
   uint8_t second = myTZ.second();
-  leds[(hour+11)%12].red = 0;
-  leds[hour%12].red = 25 * (hour/12+1);
-  leds[(minute/5+11)%12].green = 0;
-  leds[minute/5].green = 10 * (minute%5+1);
-  leds[(second/5+11)%12].blue = 0;
-  leds[second/5].blue = 10 * (second%5+1);
+  uint8_t & sPos =second;
+  uint8_t minute = myTZ.minute();
+  uint8_t & mPos = minute;
+  uint8_t hour = myTZ.hour();
+  uint8_t hPos = (hour % 12) * 5 + minute / 12;
+
+  uint8_t cursor = 30;
+  for (int i=0; i < NUM_LEDS/2; ++i)
+  {
+    // odd index - inner ring
+    leds[i*2+1] = cursor%5 == 0 ? hMarkColor : mMarkColor;
+    if (cursor == hPos) leds[i*2+1] += hColor;
+
+    // even index - outer ring
+    leds[i*2] = 0;
+    if (cursor == mPos) leds[i*2] += mColor;
+    if (cursor == sPos) leds[i*2] += sColor;
+    
+    // move cursor
+    if (cursor == 0) cursor += 60;
+    --cursor;
+  }
+
   FastLED.show();
 
   Serial.print("set LEDs and show: ");
@@ -323,11 +350,11 @@ void showTime()
   Serial.print(":");
   Serial.print(second);
   Serial.print(" ");
-  Serial.print(hour%12);
+  Serial.print(hPos);
   Serial.print(":");
-  Serial.print(minute/5);
+  Serial.print(mPos);
   Serial.print(":");
-  Serial.print(second/5);
+  Serial.print(sPos);
   Serial.println();
 }
 
