@@ -1,8 +1,8 @@
 (footprint "puzzle_male" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 6230678E)
+  (tedit 6230F14A)
   (attr through_hole)
-  (fp_text reference "REF**" (at 4.2 5 90 unlocked) (layer "B.SilkS")
+  (fp_text reference "REF**" (at 4.2 5 90 unlocked) (layer "B.SilkS") hide
     (effects (font (size 1 1) (thickness 0.15)) (justify left mirror))
     (tstamp ec342f29-7fc9-4394-8f4d-4b6d773540e9)
   )
