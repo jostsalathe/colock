@@ -7,7 +7,7 @@ A USB powered RGB wall clock inspired by analog clocks
 | --- | --- | --- | --- |
 | 100nF | 61 | C1...60, C63 | C14663 |
 | 10uF | 2 | C61, C62 | C19702 |
-| WS2812B-4020 | 60 | LED1...60 | ***C965557*** |
+| SK6812SIDE-A-RVS | 60 | LED1...60 | ***C2890037*** |
 | TYPE-C-31-M-17 | 1 | J15 | ***C283540*** |
 | AO3400A | 1 | Q1 | C20917 |
 | 0R | 1 | R1 | C21189 |

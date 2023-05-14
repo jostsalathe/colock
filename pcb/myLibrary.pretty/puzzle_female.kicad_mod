@@ -1,6 +1,6 @@
 (footprint "puzzle_female" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 6230F13A)
+  (tedit 645FF91F)
   (attr through_hole)
   (fp_text reference "REF**" (at 4.2 -5 90 unlocked) (layer "B.SilkS") hide
     (effects (font (size 1 1) (thickness 0.15)) (justify right mirror))
@@ -10,15 +10,15 @@
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 3f27385f-cbe1-45c9-ac9a-1c2672a2a35d)
   )
-  (fp_text user "+5V" (at 3 -5 90 unlocked) (layer "F.SilkS")
+  (fp_text user "+5V" (at 3 -5 90 unlocked) (layer "F.SilkS") hide
     (effects (font (size 2 2) (thickness 0.3)) (justify left))
     (tstamp 685627e1-adcc-4b77-be91-0aa88724d2a5)
   )
-  (fp_text user "GND" (at -3 -5 90 unlocked) (layer "F.SilkS")
+  (fp_text user "r" (at -3 -5 90 unlocked) (layer "F.SilkS") hide
     (effects (font (size 2 2) (thickness 0.3)) (justify left))
     (tstamp 84774f2a-6971-4fa4-a1fe-c172a40ef77d)
   )
-  (fp_text user "DATA" (at 0 -5 90 unlocked) (layer "F.SilkS")
+  (fp_text user "DATA" (at 0 -5 90 unlocked) (layer "F.SilkS") hide
     (effects (font (size 2 2) (thickness 0.3)) (justify left))
     (tstamp a37296d2-a9af-4cbb-bc74-f8784f62407a)
   )
@@ -30,9 +30,9 @@
     (options (clearance outline) (anchor rect))
     (primitives
       (gr_poly (pts
-          (xy -1.2 -0.9)
-          (xy -1.2 4.04)
           (xy 1.2 3.56)
+          (xy -1.2 4.04)
+          (xy -1.2 -0.9)
           (xy 1.2 -0.9)
         ) (width 0.2) (fill yes))
     ) (tstamp e83488de-0548-4f0d-b44a-d4c6647f8408))
@@ -40,10 +40,10 @@
     (options (clearance outline) (anchor rect))
     (primitives
       (gr_poly (pts
-          (xy -1.2 -0.9)
-          (xy -1.2 3.44)
-          (xy 0 3.2)
           (xy 1.2 3.44)
+          (xy 0 3.2)
+          (xy -1.2 3.44)
+          (xy -1.2 -0.9)
           (xy 1.2 -0.9)
         ) (width 0.2) (fill yes))
     ) (tstamp de3ce46c-5c87-4cb1-9104-e7cf5c283084))
@@ -51,9 +51,9 @@
     (options (clearance outline) (anchor rect))
     (primitives
       (gr_poly (pts
-          (xy -1.2 -0.9)
-          (xy -1.2 3.56)
           (xy 1.2 4.04)
+          (xy -1.2 3.56)
+          (xy -1.2 -0.9)
           (xy 1.2 -0.9)
         ) (width 0.2) (fill yes))
     ) (tstamp e6125ca4-8c3c-48b2-807d-2c2fe81d8bc7))
